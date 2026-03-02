@@ -10,7 +10,7 @@ function UserCard({ name, email }) {
         if (/[a-g]/.test(color)) return "#1e40af";
         else if (/[h-n]/.test(color)) return "#06952aff";
         else if (/[o-z]/.test(color)) return "#8217b4ff";
-        else return "#e5e5e5ff";
+        else return "#b2b1b1ff";
     };
     return (
         <div
