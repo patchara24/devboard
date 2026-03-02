@@ -5,6 +5,13 @@ function UserCard({ name, email }) {
         .map((n) => n[0])
         .join("");
 
+    const avatarColor = (name) => {
+        const color = name.toLowerCase().charAt(0);
+        if (/[a-g]/.test(color)) return "#1e40af";
+        else if (/[h-n]/.test(color)) return "#06952aff";
+        else if (/[o-z]/.test(color)) return "#8217b4ff";
+        else return "#e5e5e5ff";
+    };
     return (
         <div
             style={{
@@ -22,7 +29,7 @@ function UserCard({ name, email }) {
                 style={{
                     width: "40px",
                     height: "40px",
-                    background: "#1e40af",
+                    background: avatarColor(name),
                     color: "white",
                     borderRadius: "50%",
                     display: "flex",

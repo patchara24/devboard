@@ -30,6 +30,9 @@ const USERS = [
   { id: 1, name: "สมชาย ใจดี", email: "somchai@dev.com" },
   { id: 2, name: "สมหญิง รักเรียน", email: "somying@dev.com" },
   { id: 3, name: "วิชาญ โค้ดเก่ง", email: "wichan@dev.com" },
+  { id: 4, name: "Alex Lanman", email: "alex@dev.com" },
+  { id: 5, name: "Henrry Welford", email: "henrry@dev.com" },
+  { id: 6, name: "Sara Magan", email: "sara@dev.com" }
 ];
 
 function App() {
