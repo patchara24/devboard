@@ -1,3 +1,6 @@
+import PostCard from "./components/PostCard";
+import Navbar from "./components/Navbar";
+
 const POSTS = [
   {
     id: 1,
@@ -26,3 +29,12 @@ const USERS = [
   { id: 2, name: "สมหญิง รักเรียน", email: "somying@dev.com" },
   { id: 3, name: "วิชาญ โค้ดเก่ง", email: "wichan@dev.com" },
 ];
+
+
+
+export default function App() {
+  return <>
+    <Navbar />
+    <PostCard title={"ทดสอบ"} body={"นี่คือเนื้อหาทดสอบ"} />
+  </>
+}
