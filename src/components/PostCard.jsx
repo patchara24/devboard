@@ -1,3 +1,4 @@
+
 function PostCard({ title, body, isFavorite, onToggleFavorite }) {
     return (
         <div
