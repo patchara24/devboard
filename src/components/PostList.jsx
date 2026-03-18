@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
 import LoadingSpinner from "./LoadingSpinner";
 
-function PostList({ favorites, onToggleFavorite }) {
+function PostList() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchPosts() {
@@ -25,6 +27,13 @@ function PostList({ favorites, onToggleFavorite }) {
     }
     fetchPosts();
   }, []); // [] = ทำครั้งเดียวตอน component mount
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (search.trim()) {
+      navigate(`/search?q=${encodeURIComponent(search)}`);
+    }
+  };
 
   const filtered = posts.filter((post) =>
     post.title.toLowerCase().includes(search.toLowerCase()),
@@ -59,21 +68,22 @@ function PostList({ favorites, onToggleFavorite }) {
         โพสต์ล่าสุด
       </h2>
 
-      <input
-        type="text"
-        placeholder="ค้นหาโพสต์..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "0.5rem 0.75rem",
-          border: "1px solid #cbd5e0",
-          borderRadius: "6px",
-          fontSize: "1rem",
-          marginBottom: "1rem",
-          boxSizing: "border-box",
-        }}
-      />
+      <form onSubmit={handleSearchSubmit} style={{ marginBottom: "1rem" }}>
+        <input
+          type="text"
+          placeholder="ค้นหาโพสต์... (กด Enter เพื่อค้นหาในหน้า /search)"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "0.5rem 0.75rem",
+            border: "1px solid #cbd5e0",
+            borderRadius: "6px",
+            fontSize: "1rem",
+            boxSizing: "border-box",
+          }}
+        />
+      </form>
 
       {filtered.length === 0 && (
         <p style={{ color: "#718096", textAlign: "center", padding: "2rem" }}>
@@ -85,8 +95,6 @@ function PostList({ favorites, onToggleFavorite }) {
         <PostCard
           key={post.id}
           post={post}
-          isFavorite={favorites.includes(post.id)}
-          onToggleFavorite={() => onToggleFavorite(post.id)}
         />
       ))}
     </div>
