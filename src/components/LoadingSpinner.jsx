@@ -1,3 +1,7 @@
+/**
+ * คอมโพเนนต์สำหรับแสดงไอคอนหรืออนิเมชันสถานะกำลังโหลด (Loading Spinner)
+ * มักถูกเรียกใช้ซ้ำในหน้าต่างๆ ระหว่างที่กำลังรอข้อมูลจาก API แบบ Asynchronous
+ */
 function LoadingSpinner() {
   return (
     <div style={{ textAlign: "center", padding: "3rem", color: "#718096" }}>

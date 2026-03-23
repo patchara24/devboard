@@ -8,6 +8,11 @@ import FavoritesPage from "./pages/FavoritesPage";
 import SearchPage from "./pages/SearchPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
+/**
+ * ฟังก์ชันคอมโพเนนต์หลักของแอปพลิเคชัน (App Component)
+ * ทำหน้าที่เป็นตัวจัดการเส้นทาง (Routing) ปูทางไปยังหน้า (Pages) ต่างๆ ควบคุมด้วย react-router-dom
+ * และครอบแอปพลิเคชันด้วย FavoritesProvider เพื่อให้ระบบรายการโปรด (Context) ใช้งานได้ทั่วถึงทั้งแอป
+ */
 function App() {
   return (
     <FavoritesProvider>

@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 import LoadingSpinner from "./LoadingSpinner";
 
+/**
+ * คอมโพเนนต์หน้าหน้าจอรายชื่อสมาชิก (UserList)
+ * ดำเนินการดึงข้อมูลสมาชิกทั้งหมดจาก API และวนลูปสร้างการ์ดบุคคล (UserCard) นำมาเรียงต่อกัน
+ */
 function UserList() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+/**
+ * คอมโพเนนต์ฟอร์มสำหรับสร้างและเพิ่มโพสต์ใหม่
+ * รับฟังก์ชัน onAddPost ผ่าน props ไว้เรียกใช้งานเพื่อส่งต่อข้อมูลหัวข้อและเนื้อหากลับไปให้ Component แม่จัดการ
+ */
 function AddPostForm({ onAddPost }) {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");

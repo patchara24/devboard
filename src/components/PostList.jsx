@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
 import LoadingSpinner from "./LoadingSpinner";
+import PostCount from "./PostCount";
 
+/**
+ * คอมโพเนนต์หลักที่แสดงแผงรายการโพสต์ทั้งหมด (PostList)
+ * ดึงข้อมูลชุดโพสต์จาก API มาแสดงผล, มีระบบจัดการผลลัพธ์การค้นหา และลิงก์ไปยังหน้ารายละเอียดเมื่อกดดู
+ */
 function PostList() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -67,6 +72,8 @@ function PostList() {
       >
         โพสต์ล่าสุด
       </h2>
+
+      <PostCount count={filtered.length} />
 
       <form onSubmit={handleSearchSubmit} style={{ marginBottom: "1rem" }}>
         <input

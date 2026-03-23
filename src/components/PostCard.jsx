@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { useFavorites } from "../context/FavoritesContext";
 import CommentList from "./CommentList";
 
+/**
+ * คอมโพเนนต์หน้าต่างหรือการ์ดสำหรับแสดงข้อมูลหัวข้อและเนื้อหาต่อ 1 โพสต์
+ * รวบรวมฟังก์ชันการทำงานส่วนย่อย ได้แก่ การเพิ่ม/ลบออกจากรายการโปรด และดูซ่อนคอมเมนต์ของโพสต์นั้น
+ */
 function PostCard({ post }) {
   const { favorites, toggleFavorite } = useFavorites();
   const isFavorite = favorites.includes(post.id);

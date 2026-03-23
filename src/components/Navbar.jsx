@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { useFavorites } from "../context/FavoritesContext";
 
+/**
+ * คอมโพเนนต์แถบเครื่องมือนำทางด้านบนสุด (Navigation Bar)
+ * สำหรับรวบรวมลิงก์เปลี่ยนหน้าหลักของเว็บไซต์แบบ Single Page Application
+ * และต่อท่อ Context ไว้แสดงผลสรุปยอดโพสต์รายการโปรดที่ถูกใจไว้แบบเรียลไทม์
+ */
 function Navbar() {
   const { favorites } = useFavorites();
 
